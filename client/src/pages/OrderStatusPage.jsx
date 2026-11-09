@@ -187,7 +187,6 @@ export default function OrderStatusPage() {
       <main className="order-main">
         <div className="order-main__top">
           <div>
-            <Link to={`/t/${data.publicToken ? "" : ""}`} onClick={(event) => event.preventDefault()} className="back-link" aria-hidden="true" />
             <span className="eyebrow eyebrow--plain">
               <span className="eyebrow__spark">✦</span> Order {data.orderCode} · {data.table.name}
             </span>

@@ -5,7 +5,14 @@ const KEY_ID = process.env.RAZORPAY_KEY_ID || "";
 const KEY_SECRET = process.env.RAZORPAY_KEY_SECRET || "";
 const WEBHOOK_SECRET = process.env.RAZORPAY_WEBHOOK_SECRET || "";
 
-export const APP_URL = (process.env.APP_URL || "http://localhost:5173").replace(/\/+$/, "");
+// Hosted platforms expose their public origin automatically. Prefer an explicit
+// APP_URL so custom domains are always reflected in QR codes.
+const PLATFORM_URL =
+  process.env.RENDER_EXTERNAL_URL ||
+  (process.env.RAILWAY_PUBLIC_DOMAIN ? `https://${process.env.RAILWAY_PUBLIC_DOMAIN}` : "") ||
+  "http://localhost:5173";
+
+export const APP_URL = (process.env.APP_URL || PLATFORM_URL).replace(/\/+$/, "");
 
 export function paymentMode() {
   if (MODE === "razorpay" && KEY_ID && KEY_SECRET) return "razorpay";

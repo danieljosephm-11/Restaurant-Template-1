@@ -5,6 +5,9 @@ import App from "./App.jsx";
 import { AuthProvider } from "./context/AuthContext.jsx";
 import { ToastProvider } from "./context/ToastContext.jsx";
 import "./styles.css";
+import "./admin.css";
+import "./responsive.css";
+import "./print.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

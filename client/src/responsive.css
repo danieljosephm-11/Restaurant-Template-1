@@ -329,6 +329,10 @@
     padding-right: 22px;
   }
 
+  .floating-cart {
+    display: none;
+  }
+
   .mobile-cart-bar {
     position: fixed;
     right: 14px;

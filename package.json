@@ -14,7 +14,7 @@
     "reset": "node --env-file-if-exists=.env server/seed.js --reset"
   },
   "engines": {
-    "node": ">=22.9"
+    "node": ">=22.13"
   },
   "dependencies": {
     "bcryptjs": "2.4.3",

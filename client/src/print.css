@@ -1,0 +1,241 @@
+/* ==========================================================================
+   SmartDine · print styles
+   Used by the customer invoice (/bill/:orderToken) and admin reports.
+   Everything here is scoped to @media print so it never affects the app.
+   ========================================================================== */
+
+@media print {
+  @page {
+    margin: 12mm;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+    color: #1c2620 !important;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-size: 11.5pt;
+  }
+
+  /* App chrome that never belongs on paper */
+  .site-header,
+  .site-footer,
+  .customer-header,
+  .customer-footer,
+  .admin-sidebar,
+  .admin-topbar,
+  .admin-scrim,
+  .toast-stack,
+  .cart-drawer,
+  .cart-drawer__backdrop,
+  .cart-bar,
+  .mobile-bottom-nav,
+  .invoice-toolbar,
+  .invoice-actions-mobile,
+  .admin-page__actions,
+  .report-filters,
+  .report-range-label__live,
+  .report-footer-note button,
+  .back-link,
+  .button,
+  .icon-button {
+    display: none !important;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  /* ---------- Admin reports ---------- */
+  .admin-shell {
+    display: block !important;
+    min-height: 0 !important;
+    background: #fff !important;
+  }
+
+  .admin-main,
+  .admin-content {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  .admin-page {
+    padding: 0 !important;
+    max-width: none !important;
+  }
+
+  .admin-page__head {
+    margin-bottom: 14pt !important;
+    break-after: avoid;
+  }
+
+  .admin-page__head h1 {
+    font-size: 22pt !important;
+  }
+
+  .admin-page__head p {
+    max-width: none !important;
+  }
+
+  .report-range-label {
+    margin: 10pt 0 14pt !important;
+    padding: 8pt 12pt !important;
+    border: 1px solid #d9d3c5 !important;
+    border-radius: 8pt !important;
+    background: #faf7f0 !important;
+  }
+
+  .report-summary-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8pt !important;
+    margin-bottom: 14pt !important;
+  }
+
+  .report-stat {
+    padding: 9pt 11pt !important;
+    border: 1px solid #e2dccf !important;
+    border-radius: 8pt !important;
+    background: #fff !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+
+  .report-stat--primary {
+    background: #f3f6f1 !important;
+    border-color: #c9d4c3 !important;
+  }
+
+  .admin-panel,
+  .report-chart-panel {
+    border: 1px solid #e2dccf !important;
+    border-radius: 8pt !important;
+    background: #fff !important;
+    box-shadow: none !important;
+    padding: 10pt 12pt !important;
+    margin-bottom: 12pt !important;
+    break-inside: avoid;
+  }
+
+  .report-grid {
+    display: block !important;
+  }
+
+  .report-bars__chart {
+    height: 150pt !important;
+  }
+
+  .report-top-item,
+  .report-method,
+  .report-category,
+  .status-breakdown__row {
+    break-inside: avoid;
+  }
+
+  .report-footer-note {
+    margin-top: 10pt !important;
+    padding-top: 8pt !important;
+    border-top: 1px solid #e2dccf !important;
+    background: #fff !important;
+  }
+
+  /* ---------- Customer invoice ---------- */
+  .customer-page,
+  .invoice-page {
+    display: block !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  .invoice {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: #fff !important;
+    box-shadow: none !important;
+  }
+
+  .invoice__top {
+    padding-bottom: 12pt !important;
+    border-bottom: 2px solid #24382c !important;
+    break-inside: avoid;
+  }
+
+  .invoice__meta-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 12pt !important;
+    padding: 12pt 0 !important;
+    border-bottom: 1px solid #e2dccf !important;
+    break-inside: avoid;
+  }
+
+  .invoice__items {
+    margin: 12pt 0 !important;
+    break-inside: auto;
+  }
+
+  .invoice-items-head {
+    background: #f3f0e8 !important;
+    border-bottom: 1.5px solid #24382c !important;
+  }
+
+  .invoice-item {
+    break-inside: avoid;
+    border-bottom: 1px solid #ece7dc !important;
+  }
+
+  .invoice__bottom {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16pt !important;
+    padding-top: 10pt !important;
+    break-inside: avoid;
+  }
+
+  .invoice__totals {
+    border: 1px solid #e2dccf !important;
+    border-radius: 8pt !important;
+    background: #faf8f2 !important;
+    padding: 10pt 12pt !important;
+    break-inside: avoid;
+  }
+
+  .invoice__grand-total {
+    border-top: 1.5px solid #24382c !important;
+  }
+
+  .invoice__paid {
+    border: 1px solid #c7d8c2 !important;
+    background: #f1f6ee !important;
+  }
+
+  .invoice__stamp {
+    color: #2f6b4f !important;
+    border-color: #2f6b4f !important;
+    opacity: 0.5 !important;
+  }
+
+  .invoice__footer {
+    margin-top: 12pt !important;
+    padding-top: 8pt !important;
+    border-top: 1px solid #e2dccf !important;
+    break-inside: avoid;
+  }
+
+  .invoice__footer-brand {
+    margin-top: 6pt !important;
+  }
+}
