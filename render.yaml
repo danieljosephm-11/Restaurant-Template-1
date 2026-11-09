@@ -5,7 +5,7 @@
 # attach a persistent disk for durable orders (see README).
 services:
   - type: web
-    name: smartdine
+    name: smartdine-danieljosephm
     runtime: node
     plan: free
     buildCommand: npm ci && npm run build
@@ -13,7 +13,7 @@ services:
     healthCheckPath: /api/health
     envVars:
       - key: NODE_VERSION
-        value: 24.22.2
+        value: 22.13.0
       - key: JWT_SECRET
         generateValue: true
       - key: PAYMENT_MODE

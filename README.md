@@ -111,7 +111,7 @@ JWT_SECRET=change-me-to-a-long-random-string
 PAYMENT_MODE=demo
 ```
 
-> On a hosted platform, set `APP_URL` to the public origin (for example `https://smartdine.onrender.com`). QR codes embed this value, so a wrong URL produces QR codes that point at localhost. On Render, `RENDER_EXTERNAL_URL` is used automatically when `APP_URL` is unset.
+> On a hosted platform, set `APP_URL` to the public origin (for example `https://your-service.onrender.com`). QR codes embed this value, so a wrong URL produces QR codes that point at localhost. On Render, `RENDER_EXTERNAL_URL` is used automatically when `APP_URL` is unset.
 
 ### Demo access
 
